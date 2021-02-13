@@ -1,17 +1,24 @@
 package com.sapeint.assessment;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
+@ActiveProfiles("test")
 @SpringBootTest
+@ExtendWith(SpringExtension.class)
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SapientAssessmentApplicationTests {
 
 	@Test
-	public void contextLoads() {
-	}
+	void contextLoads() {
+		final String TEST_FRAMEWORK_WORKING = "Test Works";
 
+		Assertions.assertThat(TEST_FRAMEWORK_WORKING).isEqualTo(TEST_FRAMEWORK_WORKING); // NOSONAR
+	}
 
 }

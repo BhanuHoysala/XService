@@ -1,4 +1,4 @@
-package com.sapeint.assessment.x.controller.configuration;
+package com.sapeint.assessment.configuration;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
